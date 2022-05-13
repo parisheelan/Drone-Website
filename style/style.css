@@ -212,7 +212,7 @@ html {
 }
 
 * body header h2 {
-  margin-top: 100px;
+  margin-top: 150px;
   font-size: 2rem;
 }
 
@@ -324,6 +324,7 @@ html {
 }
 
 * body .themes {
+  overflow-x: hidden;
   background-color: #c5b3ff;
 }
 
@@ -332,75 +333,77 @@ html {
   font-size: 3rem;
 }
 
-* body .themes .card {
+* body .themes .carousel {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+* body .themes .carousel > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+* body .themes .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  -webkit-transition: 200ms opacity ease-in-out;
+  transition: 200ms opacity ease-in-out;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+}
+
+* body .themes .slide > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+* body .themes .slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+}
+
+* body .themes .carousel-button {
+  position: absolute;
+  z-index: 2;
+  background: none;
+  border: none;
+  font-size: 4rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  border-radius: 0.25rem;
+  padding: 0 0.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+* body .themes .carousel-button:hover,
+* body .themes .carousel-button:focus {
   color: white;
-  height: 400px;
-  width: 350px;
-  background-color: white;
-  border-radius: 20px;
-  margin: 50px 20px 30px 20px;
-  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-* body .themes .card .card-content {
-  width: 85%;
-  margin: auto;
+* body .themes .carousel-button:focus {
+  outline: 1px solid black;
 }
 
-* body .themes .card .card-content h2 {
-  margin: 20px 0;
-  color: black;
-  text-shadow: 1px 1px 2px white;
+* body .themes .carousel-button.prev {
+  left: 1rem;
 }
 
-* body .themes .card .card-content p {
-  margin-top: 50px;
-  text-align: justify;
-  font-size: 1.1rem;
-  text-shadow: 3px 3px 3px black;
-}
-
-* body .themes .agriculture {
-  background-image: url("/assets/images/agriculture.webP");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-* body .themes .defense {
-  background-image: url("/assets/images/defense.webP");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-* body .themes .health {
-  background-image: url("/assets/images/healthcare.webP");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-* body .themes .public {
-  background-image: url("/assets/images/safety.webP");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: left;
-}
-
-* body .themes .industrial {
-  background-image: url("/assets/images/industry.webP");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-* body .themes .flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+* body .themes .carousel-button.next {
+  right: 1rem;
 }
 
 * body .contact {

@@ -91,6 +91,7 @@ html {
 }
 
 //reset margin and padding
+
 * {
   margin: 0;
   padding: 0;
@@ -209,7 +210,7 @@ html {
       margin: auto;
 
       h2 {
-        margin-top: 100px;
+        margin-top: 150px;
         font-size: 2rem;
       }
 
@@ -312,77 +313,78 @@ html {
 
     //Themes Page
     .themes {
+      overflow-x: hidden;
       background-color: #c5b3ff;
 
       h1 {
         padding-top: 50px;
         font-size: 3rem;
       }
+      .carousel {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+      }
 
-      .card {
+      .carousel > ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: 200ms opacity ease-in-out;
+        transition-delay: 200ms;
+      }
+
+      .slide > img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .slide[data-active] {
+        opacity: 1;
+        z-index: 1;
+        transition-delay: 0ms;
+      }
+
+      .carousel-button {
+        position: absolute;
+        z-index: 2;
+        background: none;
+        border: none;
+        font-size: 4rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        border-radius: 0.25rem;
+        padding: 0 0.5rem;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      .carousel-button:hover,
+      .carousel-button:focus {
         color: white;
-        height: 400px;
-        width: 350px;
-        background-color: white;
-        border-radius: 20px;
-        margin: 50px 20px 30px 20px;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-
-        .card-content {
-          width: 85%;
-          margin: auto;
-
-          h2 {
-            margin: 20px 0;
-            color: black;
-            text-shadow: 1px 1px 2px white;
-          }
-
-          p {
-            margin-top: 50px;
-            text-align: justify;
-            font-size: 1.1rem;
-            text-shadow: 3px 3px 3px black;
-          }
-        }
+        background-color: rgba(0, 0, 0, 0.2);
       }
 
-      .agriculture {
-        background-image: url("/assets/images/agriculture.webP");
-        background-repeat: no-repeat;
-        background-size: cover;
+      .carousel-button:focus {
+        outline: 1px solid black;
       }
 
-      .defense {
-        background-image: url("/assets/images/defense.webP");
-        background-repeat: no-repeat;
-        background-size: cover;
+      .carousel-button.prev {
+        left: 1rem;
       }
 
-      .health {
-        background-image: url("/assets/images/healthcare.webP");
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-
-      .public {
-        background-image: url("/assets/images/safety.webP");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: left;
-      }
-
-      .industrial {
-        background-image: url("/assets/images/industry.webP");
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-
-      .flex {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+      .carousel-button.next {
+        right: 1rem;
       }
     }
 
