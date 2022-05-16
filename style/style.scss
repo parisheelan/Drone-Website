@@ -259,23 +259,26 @@ html {
       }
 
       .coder-about {
-        margin-top: 100px;
+        margin-top: 50px;
         justify-content: space-evenly;
         align-items: center;
-        display: flex;
+        display: block;
         flex-wrap: wrap;
+      }
+      .para {
+        width: 50%;
+        margin: auto;
+        padding-top: 50px;
+        p {
+          text-align: center;
+          margin: auto;
+          padding: 25px 0;
+          font-size: 1.3rem;
+        }
       }
 
       img {
-        width: 400px;
-      }
-
-      p {
-        text-align: left;
-        font-size: 1.5rem;
-        line-height: 30px;
-        margin-top: 50px;
-        width: 50%;
+        width: 150px;
       }
 
       .flex {
@@ -303,7 +306,7 @@ html {
       ul {
         width: 70%;
         margin: auto;
-        padding: 50px 0;
+        padding: 200px 0;
         line-height: 35px;
         text-align: justify;
         list-style: none;

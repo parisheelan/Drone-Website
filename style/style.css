@@ -260,30 +260,33 @@ html {
 }
 
 * body .about .coder-about {
-  margin-top: 100px;
+  margin-top: 50px;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
-* body .about img {
-  width: 400px;
+* body .about .para {
+  width: 50%;
+  margin: auto;
+  padding-top: 50px;
 }
 
-* body .about p {
-  text-align: left;
-  font-size: 1.5rem;
-  line-height: 30px;
-  margin-top: 50px;
-  width: 50%;
+* body .about .para p {
+  text-align: center;
+  margin: auto;
+  padding: 25px 0;
+  font-size: 1.3rem;
+}
+
+* body .about img {
+  width: 150px;
 }
 
 * body .about .flex {
@@ -316,7 +319,7 @@ html {
 * body .rules ul {
   width: 70%;
   margin: auto;
-  padding: 50px 0;
+  padding: 200px 0;
   line-height: 35px;
   text-align: justify;
   list-style: none;
